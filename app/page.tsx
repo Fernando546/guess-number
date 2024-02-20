@@ -9,7 +9,7 @@ const lexendDeca700 = Lexend_Deca({
 
 export default function Home() {
   return (
-    <main className="h-screen flex justify-center items-center">
+    <main className="h-full flex justify-center items-center">
       <div className="flex w-2/5 flex-col items-center">
         <p className={`${lexendDeca700.className} bg-gradient-to-r from-purple-500 to-pink-500 text-6xl bg-clip-text text-transparent text-center`}>Guess the number between 1-100</p>
           <Link

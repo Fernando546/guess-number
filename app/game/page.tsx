@@ -22,6 +22,7 @@ export default function Home() {
         alert("You lost!");
         setLife(5); 
         setNumber(getRandomNumber());
+        console.log(number);
       } else if (guessNumber > number) {
         alert("Too high");
         setLife((prevLife) => prevLife - 1); 
@@ -31,6 +32,7 @@ export default function Home() {
       } else {
         alert("You guessed right!");
         setNumber(getRandomNumber());
+        console.log(number);
       }
     }
   };
