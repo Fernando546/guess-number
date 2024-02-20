@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Lexend_Deca } from "next/font/google";
-import { useState, useEffect } from "react"; 
+import { useState } from "react"; 
 
 const lexendDeca700 = Lexend_Deca({ 
   weight: "700",
@@ -13,18 +13,15 @@ export default function Home() {
   const [life, setLife] = useState(5); 
   const [number, setNumber] = useState(getRandomNumber()); 
 
-  useEffect(() => {
-    setNumber(getRandomNumber());
-    setGuess("");
-  }, [life]);
-
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       const guessNumber = parseInt(guess); 
       console.log(life);
+      console.log(number);
       if (life === 0) {
         alert("You lost!");
         setLife(5); 
+        setNumber(getRandomNumber());
       } else if (guessNumber > number) {
         alert("Too high");
         setLife((prevLife) => prevLife - 1); 
@@ -33,8 +30,7 @@ export default function Home() {
         setLife((prevLife) => prevLife - 1); 
       } else {
         alert("You guessed right!");
-        setNumber(getRandomNumber()); 
-        setLife(5); 
+        setNumber(getRandomNumber());
       }
     }
   };
