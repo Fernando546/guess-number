@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import Link from "next/link";
 import { Lexend_Deca } from "next/font/google";
 import { useState } from "react"; 
@@ -34,6 +34,8 @@ export default function Home() {
         setNumber(getRandomNumber());
         console.log(number);
       }
+    } else if (!/[0-9]/.test(event.key)) {
+      event.preventDefault();
     }
   };
 
