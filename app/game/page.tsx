@@ -34,6 +34,8 @@ export default function Home() {
         setNumber(getRandomNumber());
         console.log(number);
       }
+    } else if (event.key === "Backspace" || event.key === "Delete") {
+      // do nothing
     } else if (!/[0-9]/.test(event.key)) {
       event.preventDefault();
     }
